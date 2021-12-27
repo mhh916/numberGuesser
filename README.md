@@ -15,10 +15,12 @@ Team Members:
 
 Replit:
 - https://replit.com/@mhh916/numberGuesser#main.py
+
 ### Technologies
 - Python
 - Unit Testing
 - Pylint
+- Replit
 
 ### Modules
 - logging
