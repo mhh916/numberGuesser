@@ -25,4 +25,10 @@ Team Members:
 - datetime
 
 ### Sample Output
-![](./output.png)
+<img src="images/output.png" width= "300">
+
+### Unit Test Output
+<img src="images/test.png" width= "450">
+
+### Pylint Output
+<img src="images/lint.png" width= "600">
