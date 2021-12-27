@@ -23,3 +23,6 @@ Team Members:
 - random
 - re
 - datetime
+
+### Sample Output
+![](./output.png)
