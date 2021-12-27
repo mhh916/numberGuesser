@@ -1,6 +1,6 @@
 ### Number Guesser - Mini Project
 A Python application that implements the Number Guesser game.
-This game generates a random number for the user to guess.
+This game generates a random number between 1~100 for the user to guess.
 
 December 27 2021
 
@@ -15,10 +15,12 @@ Team Members:
 
 Replit:
 - https://replit.com/@mhh916/numberGuesser#main.py
+
 ### Technologies
 - Python
 - Unit Testing
 - Pylint
+- Replit
 
 ### Modules
 - logging
