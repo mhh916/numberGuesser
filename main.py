@@ -14,18 +14,21 @@ from datetime import datetime
 def logs():
     """Turns debugging on or off
     """
-    loop = 1
     # Turns debugg logging on/off determined by user input
-    try:
-        while loop:
+
+    loop = True
+    while loop:
+        try:
+            log = ""
             log = input("Would you like logging on Y/N\n")
+        except RuntimeError:
+            print("error")
+            loop = False
         if bool(re.match(r'^(Y)$', log)):
-            loop = 0
+            loop = False
             logging.basicConfig(level=logging.DEBUG)
         elif bool(re.match(r'^(N)$', log)):
-            loop = 0
-    except RuntimeError:
-        print("error")
+            loop = False
 
 
 def generate_number():
@@ -64,6 +67,8 @@ def number_guesser():
     """
     logs()
     num = generate_number()
+    logging.debug("\nDate: %s\nAnswer is: %s",
+                          str(datetime.now()), str(num))
     guess = "0"  # number guessed
     guess_high = "100"  # if guess is higher than number
     guess_low = "0"  # if guess is lower than number
@@ -77,19 +82,19 @@ def number_guesser():
             count += 1
             logging.debug("\nDate: %s\nCount is: %s",
                           str(datetime.now()), str(count))
-        if int(user_input) > num:
-            guess = user_input
-            # used to only change value if guess is lower than guess_high
-            if int(guess_high) > int(user_input):
-                guess_high = user_input
-            print("Too high!!")
-        elif int(user_input) < num:
-            guess = user_input
-            # used to only change value if guess is higher than guess_low
-            if int(guess_low) < int(user_input):
-                guess_low = user_input
-                print("Too low!!")
-            # if guess is correct ends loop and prints win text
+            if int(user_input) > num:
+                guess = user_input
+                # used to only change value if guess is lower than guess_high
+                if int(guess_high) > int(user_input):
+                    guess_high = user_input
+                    print("Too high!!")
+            elif int(user_input) < num:
+                guess = user_input
+                # used to only change value if guess is higher than guess_low
+                if int(guess_low) < int(user_input):
+                    guess_low = user_input
+                    print("Too low!!")
+                # if guess is correct ends loop and prints win text
             elif int(user_input) == num:
                 guess = user_input
                 print("Congratulations!! You Win!\nAmount of Tries: " +
