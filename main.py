@@ -68,7 +68,7 @@ def number_guesser():
     logs()
     num = generate_number()
     logging.debug("\nDate: %s\nAnswer is: %s",
-                          str(datetime.now()), str(num))
+                  str(datetime.now()), str(num))
     guess = "0"  # number guessed
     guess_high = "100"  # if guess is higher than number
     guess_low = "1"  # if guess is lower than number
