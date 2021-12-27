@@ -71,7 +71,7 @@ def number_guesser():
                           str(datetime.now()), str(num))
     guess = "0"  # number guessed
     guess_high = "100"  # if guess is higher than number
-    guess_low = "0"  # if guess is lower than number
+    guess_low = "1"  # if guess is lower than number
     count = 0  # Guess attempts
     # Main game loop when guess is correct loop ends
     try:
